@@ -1,0 +1,100 @@
+<div class="section">
+  <div class="container">
+    <h4>Fill below details</h4>
+    <form [formGroup]="createTaskForm">
+      <!--  (ngSubmit)="onSubmit()"> -->
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="taskName">Task Title</mat-label>
+          <input
+            matInput
+            placeholder="Task Title"
+            formControlName="taskName"
+            type="text"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="type">Task Title</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="task">Task</mat-option>
+            <mat-option value="bug">Bug</mat-option>
+            <mat-option value="testing">Testing</mat-option>
+            <mat-option value="others">Others</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="assignedTo">Assigned To</mat-label>
+          <input
+            matInput
+            placeholder="Assigned To"
+            formControlName="assignedTo"
+            type="text"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="startDate">Start Date</mat-label>
+          <input
+            matInput
+            placeholder="Start Date"
+            formControlName="startDate"
+            type="date"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="endDate">End Date</mat-label>
+          <input
+            matInput
+            placeholder="End Date"
+            formControlName="endDate"
+            type="date"
+          />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="taskDetails">Task Details</mat-label>
+          <textarea
+            matInput
+            placeholder="Task Details"
+            formControlName="taskDetails"
+            type="text"
+          >
+          </textarea>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label for="status">Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="NewTask">New</mat-option>
+            <mat-option value="Working">Work in Progress</mat-option>
+            <mat-option value="InReview">In Review</mat-option>
+            <mat-option value="Completed">Completed</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-button class="btn btn-danger" (click)="onNoClick()">
+        Close
+      </button>
+      <button
+        [disabled]="!createTaskForm.valid || !temp"
+        mat-button
+        [mat-dialog-close]="createTaskForm.value"
+        class="btn btn-success"
+      > 
+        Save
+      </button>
+    </div>
+  </div>
+</div>

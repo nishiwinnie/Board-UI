@@ -1,0 +1,63 @@
+.container {
+  padding-top: 2%;
+  color: var(--primary);
+}
+.col-sm-3 {
+  height: 70vh;
+  background-color: #c2e5e7;
+  margin-bottom: 30px;
+}
+textarea {
+  border: transparent;
+  width: 100%;
+}
+h2 {
+  margin-bottom: 10px;
+}
+/*------------- Drag Drop CSS ---------------- */
+.example-container {
+  max-width: 100%;
+}
+
+.example-list {
+  min-height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* display: block; */
+}
+
+mat-card .example-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #a8dadc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: #a8dadc;
+  font-size: 14px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px #a8dadc, 0 8px 10px 1px #a8dadc,
+    0 3px 14px 2px #a8dadc;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

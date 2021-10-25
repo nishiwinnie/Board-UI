@@ -1,0 +1,23 @@
+.container-fluid {
+  padding-top: 50px;
+}
+mat-card {
+  background-color: #a8dadc;
+  height: 320px;
+}
+mat-form-field {
+  width: 100%;
+  padding-bottom: 0;
+}
+button {
+  width: 100%;
+  background-color: #003049;
+  color: white;
+}
+a {
+  color: #d62828;
+}
+.btn:hover {
+  background-color: #d62828;
+  color: white;
+}

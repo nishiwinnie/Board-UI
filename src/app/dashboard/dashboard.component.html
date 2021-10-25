@@ -1,0 +1,46 @@
+<div class="container">
+  <div *ngIf="temp" class="row" style="margin-bottom: 2%">
+    <div class="col-6 text-end" style="padding-right: 0">
+      <h4>You can edit now!! Click to &nbsp;</h4>
+    </div>
+    <div class="col-6" style="padding-left: 0">
+      <button mat-raised-button class="btn" color="accent" (click)="change()">
+        Save Changes
+      </button>
+    </div>
+  </div>
+  <div cdkDropListGroup class="row">
+    <mat-card class="col-sm-3" *ngFor="let item of groupTask | keyvalue">
+      <div class="example-container">
+        <h2>
+          {{ item.key }}
+          <mat-icon
+            (click)="addCard({ status: item.key })"
+            color="primary"
+            style="float: inline-start; cursor: pointer"
+            [inline]="true"
+          >
+            add_circle_outline
+          </mat-icon>
+        </h2>
+        <div
+          cdkDropList
+          [id]="item.key"
+          [cdkDropListData]="item.value"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+          *ngIf="item.value"
+        >
+          <mat-card
+            class="example-box"
+            *ngFor="let i of item.value"
+            cdkDrag
+            (click)="addCard(i)"
+          >
+            Task Name : {{ i.taskName }}
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

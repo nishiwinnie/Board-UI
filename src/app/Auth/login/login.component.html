@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <mat-card>
+        <h4><i>Welcome</i></h4>
+        <form [formGroup]="loginForm">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label for="userName">User Name</mat-label>
+              <input
+                matInput
+                placeholder="User Name"
+                formControlName="userName"
+                type="text"
+              />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label for="password">Password</mat-label>
+              <input
+                matInput
+                placeholder="Password"
+                formControlName="password"
+                type="password"
+              />
+            </mat-form-field>
+          </p>
+          <button
+            [disabled]="!loginForm.valid"
+            mat-button
+            class="btn"
+            (click)="login()"
+          >
+            Login
+          </button>
+        </form>
+        <div class="row" style="padding-top: 4%">
+          <div class="col">
+            <p>Forgot Password</p>
+          </div>
+          <div class="col">
+            <p>
+              New User,
+              <a [routerLink]="['/register']"> Register </a>
+            </p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
